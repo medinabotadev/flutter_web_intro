@@ -8,9 +8,9 @@ class RouteGenerator{
   static Route<dynamic> generateRoute(RouteSettings settings){
     switch (settings.name) {
       case '/stateful':
-        return _fadeRoute(CounterView(), '/stateful');
+        return _fadeRoute(CounterView(base: '5',), '/stateful');
       case '/provider':
-        return _fadeRoute(CounterProviderView(), '/provider');
+        return _fadeRoute(CounterProviderView(base: '10',), '/provider');
       default:
         return _fadeRoute(View404(), '/404');
     }
@@ -18,6 +18,7 @@ class RouteGenerator{
 
   static PageRoute _fadeRoute(Widget child, String routeName){
     return PageRouteBuilder(
+       settings: RouteSettings(name: routeName),
        pageBuilder: (BuildContext context, animation, secondAnimation){
          return child;
        },

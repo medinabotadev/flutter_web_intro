@@ -48,6 +48,18 @@ class _TableDesktopMenu extends StatelessWidget {
             text: 'Otra pagina', 
             onPressed: () => locator<NavigationService>().navigateTo('/404'),
             color: Colors.black,
+          ),
+          const SizedBox(width: 10.0,),
+          CustomFlatButton(
+            text: 'Stateful 100', 
+            onPressed: () => locator<NavigationService>().navigateTo('/stateful/100'),
+            color: Colors.black,
+          ),
+          const SizedBox(width: 10.0,),
+          CustomFlatButton(
+            text: 'Provider 200', 
+            onPressed: () => locator<NavigationService>().navigateTo('/provider?q=200'),
+            color: Colors.black,
           )
         ],
       ),
